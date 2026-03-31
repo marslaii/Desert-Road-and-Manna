@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <style>
 img {
   display: block;
@@ -9,6 +12,32 @@ img {
 </style>
 <body style="background-color:black;">
 <body>
+
+<button onclick="openFullscreen();">Open Fullscreen</button>
+<button onclick="closeFullscreen();">Close Fullscreen</button>
+
+<script>
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+</script>
 
 <p align="center"><iframe src="https://free.timeanddate.com/clock/iaco6c4g/n102/tlhk/fs30/fcfff/tct/pct/tt0/tw0/th1/tb1" frameborder="0" width="399" height="36" allowtransparency="true"></iframe>
 </p>
